@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Account Recovery Help – IR EN team developer</title>
+<meta name="description" content="Step-by-step help to recover a hacked or locked account through the official recovery pages of Facebook, Instagram, Telegram and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050605;--ink:#f3f6ea;--dim:#9aa28c;--lime:#d6ff3a;--line:rgba(255,255,255,.12);--glass:rgba(16,19,12,.62);--sans:'Inter','Noto Sans Bengali',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(60% 40% at 0% 0%,rgba(190,255,40,.18),transparent 70%),radial-gradient(55% 40% at 100% 100%,rgba(45,226,255,.16),transparent 70%);background-attachment:fixed}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+header{position:sticky;top:0;z-index:20;background:rgba(5,6,5,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:58px}
+.logo{font-weight:700;text-decoration:none;display:flex;align-items:center;gap:10px;font-size:14px;line-height:1.15}
+.logo i{width:22px;height:22px;border-radius:7px;background:var(--lime);box-shadow:0 0 18px rgba(214,255,58,.5);flex:none}
+.tools{display:flex;gap:8px;align-items:center}
+.btn{display:inline-block;padding:10px 18px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line);background:var(--glass);color:var(--ink);cursor:pointer;font-family:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);border-color:rgba(214,255,58,.6)}.btn:active{transform:scale(.96)}
+.btn.main{background:var(--lime);color:#10150a;border-color:transparent}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--dim);font:600 13px var(--sans);padding:8px 13px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--lime);color:#10150a}
+.hero{padding:56px 0 20px}
+.tag{font:500 12.5px var(--mono);color:var(--lime);border:1px solid var(--line);border-radius:99px;padding:5px 13px;display:inline-block;background:var(--glass)}
+h1{font-size:clamp(34px,7vw,60px);line-height:1.05;letter-spacing:-.03em;margin:18px 0 12px}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{color:#c1c8b4;max-width:60ch;font-size:clamp(16px,2vw,19px)}
+.alert{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(255,77,109,.5);background:rgba(255,77,109,.08);border-radius:18px;padding:16px 18px;margin:22px 0}
+.alert b{color:#ff8fa3}.alert span{font-size:26px;line-height:1}
+section{padding:36px 0 6px}
+h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--dim);margin:0 0 20px;max-width:64ch}
+.card{border:1px solid var(--line);border-radius:18px;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.pf{--a:#d6ff3a;display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 10px;cursor:pointer;color:inherit;font:inherit;text-align:center;transition:transform .25s,border-color .25s,box-shadow .25s;animation:up .55s ease backwards;animation-delay:calc(var(--i,0)*50ms)}
+.pf:hover,.pf[aria-expanded="true"]{transform:translateY(-4px);border-color:var(--a);box-shadow:0 14px 34px -20px var(--a)}
+.pf:active{transform:scale(.96)}
+.lg{width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;font:700 22px var(--sans);color:#10150a}
+.lg img{width:34px;height:34px}
+.pf b{font-size:15px}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+.panel{margin-top:14px;padding:22px;animation:up .4s ease}
+.panel[hidden]{display:none}
+.panel h3{margin:0 0 12px;font-size:22px}
+.panel ol{margin:0 0 16px;padding-left:20px;color:#d4dac7}.panel li{margin-bottom:8px}
+.lk{display:flex;flex-wrap:wrap;gap:10px}
+.note{color:var(--dim);font-size:13.5px;margin-top:14px}
+.cl{display:grid;gap:8px}
+.cl label{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:14px;cursor:pointer;transition:border-color .2s,background .2s}
+.cl label:hover{border-color:var(--lime)}
+.cl input{accent-color:var(--lime);width:20px;height:20px;margin-top:2px;flex:none}
+.cl input:checked+span{opacity:.55;text-decoration:line-through}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.can,.cant{padding:18px}.can h4{color:var(--lime)}.cant h4{color:#ff8fa3}.card h4{margin:0 0 10px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:#d4dac7}.card li{margin-bottom:6px}
+.ask{padding:20px;display:grid;gap:12px}
+.ask select,.ask textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;color:var(--ink);font:400 16px var(--sans);padding:11px 13px}
+.ask select option{background:#10130c}
+.ask textarea{min-height:96px;resize:vertical}
+.err{color:#ff8f8f;font-size:13.5px;min-height:18px}
+footer{margin-top:50px;border-top:1px solid var(--line);padding:22px 0 44px;color:var(--dim);font-size:13px}
+@media(max-width:560px){#back{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="index.html"><i></i><span>IR EN team developer</span></a>
+  <div class="tools"><a class="btn" href="index.html" id="back">Back to site</a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="bn" aria-pressed="false">বাংলা</button></div></div>
+</div></header>
+<main class="wrap">
+<div class="hero">
+  <span class="tag" id="t_tag">ACCOUNT RECOVERY HELP</span>
+  <h1 id="t_h1">Hacked or locked out? Recover it the <em>safe way.</em></h1>
+  <p class="lead" id="t_lead">Pick your app. We show the official recovery steps and the real links, and we can guide you if you get stuck.</p>
+  <div class="alert"><span>⚠️</span><div><b id="t_w1">Never share your password, OTP or login code with anyone.</b><div id="t_w2">Not with us, not with someone who says they are from Facebook, Instagram, Telegram or any app. Real support never asks for it. Anyone who promises to "hack your account back" or asks for money first is a scammer.</div></div></div>
+</div>
+
+<section>
+  <h2 id="t_pick">1. Choose your app</h2>
+  <p class="sub" id="t_pick2">Tap an app to see the steps.</p>
+  <div class="grid" id="grid"></div>
+  <div class="card panel" id="panel" hidden></div>
+</section>
+
+<section>
+  <h2 id="t_ck">2. After you get your account back</h2>
+  <p class="sub" id="t_ck2">Tick each step. Your ticks stay on this phone only.</p>
+  <div class="card" style="padding:14px"><div class="cl" id="cl"></div></div>
+</section>
+
+<section>
+  <h2 id="t_wh">3. What we can and cannot do</h2>
+  <div class="two">
+    <div class="card can"><h4 id="t_can">We can</h4><ul id="ul_can"></ul></div>
+    <div class="card cant"><h4 id="t_cant">We cannot</h4><ul id="ul_cant"></ul></div>
+  </div>
+</section>
+
+<section>
+  <h2 id="t_ask">4. Ask for guidance</h2>
+  <p class="sub" id="t_ask2">Tell us which app and what happened. This opens WhatsApp with your message. Do not write passwords, codes or ID numbers.</p>
+  <div class="card ask">
+    <select id="plat" aria-label="App"></select>
+    <textarea id="msg" maxlength="300"></textarea>
+    <div class="err" id="err" role="alert"></div>
+    <div><button class="btn main" type="button" id="send">Open WhatsApp</button></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap" id="foot">This page only guides you to the official recovery pages. We cannot log in to your account or bypass any app's security. Logos belong to their owners.</div></footer>
+
+<script>
+(function(){
+var WA='8801626641626';
+var T={
+ en:{back:'Back to site',tag:'ACCOUNT RECOVERY HELP',h1:'Hacked or locked out? Recover it the <em>safe way.</em>',lead:'Pick your app. We show the official recovery steps and the real links, and we can guide you if you get stuck.',w1:'Never share your password, OTP or login code with anyone.',w2:'Not with us, not with someone who says they are from Facebook, Instagram, Telegram or any app. Real support never asks for it. Anyone who promises to "hack your account back" or asks for money first is a scammer.',pick:'1. Choose your app',pick2:'Tap an app to see the steps.',steps:'Steps',open:'Open official page',ck:'2. After you get your account back',ck2:'Tick each step. Your ticks stay on this phone only.',wh:'3. What we can and cannot do',can:'We can',cant:'We cannot',ask:'4. Ask for guidance',ask2:'Tell us which app and what happened. This opens WhatsApp with your message. Do not write passwords, codes or ID numbers.',ph:'What happened? (short, no passwords or codes)',send:'Open WhatsApp',bad:'Please remove numbers or codes from your message.',short:'Please write a short message first.',hello:'Hello, I need guidance to recover my {p} account.',foot:'This page only guides you to the official recovery pages. We cannot log in to your account or bypass any app\'s security. Logos belong to their owners.',other:'Other app',
+  ckl:['Change the password to a new, long and unique one.','Log out of all other devices and sessions.','Turn on two-factor login (use an authenticator app if possible).','Check and fix your recovery email and phone number.','Remove apps and connected devices you do not know.','Tell your friends you were hacked, so they ignore strange messages from you.'],
+  cans:['Explain the official recovery steps in simple words.','Help you prepare what the official form asks for.','Check your security settings with you after you are back in.'],
+  cants:['Log in to your account or ask for your password.','Bypass any app\'s security or "hack it back".','Promise that an account will be recovered. Only the app decides that.','Take money to recover an account.']},
+ bn:{back:'সাইটে ফিরে যাও',tag:'অ্যাকাউন্ট রিকভারি সাহায্য',h1:'হ্যাক বা লক হয়ে গেছে? <em>নিরাপদ পথে</em> ফিরে পাও।',lead:'তোমার অ্যাপটা বেছে নাও। আমরা অফিসিয়াল রিকভারির ধাপ আর আসল লিংক দেখাই, আটকে গেলে পথও দেখিয়ে দিই।',w1:'পাসওয়ার্ড, OTP বা লগইন কোড কাউকে দিও না।',w2:'আমাদেরকেও না, আর যে নিজেকে Facebook, Instagram, Telegram বা কোনো অ্যাপের লোক বলে তাকেও না। আসল সাপোর্ট কখনো এসব চায় না। যে "হ্যাক করে ফিরিয়ে দেবে" বলে বা আগে টাকা চায়, সে প্রতারক।',pick:'১. তোমার অ্যাপ বেছে নাও',pick2:'ধাপ দেখতে অ্যাপে চাপ দাও।',steps:'ধাপ',open:'অফিসিয়াল পেজ খোলো',ck:'২. অ্যাকাউন্ট ফিরে পাওয়ার পর',ck2:'প্রতিটা ধাপ করে টিক দাও। টিক শুধু এই ফোনেই থাকে।',wh:'৩. আমরা কী পারি আর কী পারি না',can:'আমরা পারি',cant:'আমরা পারি না',ask:'৪. পথ দেখাতে বলো',ask2:'কোন অ্যাপ আর কী হয়েছে লেখো। এটা তোমার মেসেজসহ WhatsApp খুলবে। পাসওয়ার্ড, কোড বা আইডি নম্বর লিখো না।',ph:'কী হয়েছে? (ছোট করে, পাসওয়ার্ড বা কোড ছাড়া)',send:'WhatsApp খোলো',bad:'মেসেজ থেকে সংখ্যা বা কোড সরিয়ে দাও।',short:'আগে ছোট একটা মেসেজ লেখো।',hello:'হ্যালো, আমার {p} অ্যাকাউন্ট ফিরে পেতে পথ দেখাতে হবে।',foot:'এই পেজ শুধু অফিসিয়াল রিকভারি পেজে যাওয়ার পথ দেখায়। আমরা তোমার অ্যাকাউন্টে ঢুকতে বা কোনো অ্যাপের নিরাপত্তা ভাঙতে পারি না। লোগো তাদের নিজ নিজ মালিকের।',other:'অন্য অ্যাপ',
+  ckl:['পাসওয়ার্ড বদলে নতুন, লম্বা ও আলাদা একটা দাও।','অন্য সব ডিভাইস ও সেশন থেকে লগআউট করো।','টু-ফ্যাক্টর লগইন চালু করো (সম্ভব হলে অথেনটিকেটর অ্যাপ)।','রিকভারি ইমেইল ও ফোন নম্বর দেখে ঠিক করো।','অচেনা অ্যাপ ও ডিভাইস সরিয়ে দাও।','বন্ধুদের জানাও যে হ্যাক হয়েছিল, যাতে অদ্ভুত মেসেজ এড়িয়ে চলে।'],
+  cans:['অফিসিয়াল রিকভারির ধাপ সহজ ভাষায় বুঝিয়ে দিতে।','অফিসিয়াল ফর্মে যা চায় তা গুছিয়ে নিতে সাহায্য করতে।','অ্যাকাউন্ট ফিরে পাওয়ার পর সিকিউরিটি সেটিং একসাথে দেখে দিতে।'],
+  cants:['তোমার অ্যাকাউন্টে ঢুকতে বা পাসওয়ার্ড চাইতে।','কোনো অ্যাপের নিরাপত্তা ভাঙতে বা "হ্যাক করে ফেরত" আনতে।','অ্যাকাউন্ট ফিরে পাওয়ার নিশ্চয়তা দিতে। সেটা ঠিক করে শুধু অ্যাপ নিজে।','অ্যাকাউন্ট ফিরিয়ে দেওয়ার জন্য টাকা নিতে।']}
+};
+var PF=[
+ {k:'facebook',n:'Facebook',s:'facebook',a:'#4da3ff',L:[['Hacked account page','https://www.facebook.com/hacked'],['Forgot password','https://www.facebook.com/login/identify'],['Help Center','https://www.facebook.com/help']],
+  en:['Open Facebook\'s official page for hacked accounts and answer its questions.','If you cannot log in, use "Forgot password" and choose an email or phone number that you control.','Try from a phone or browser you used before. Facebook trusts known devices more.','If Facebook asks you to confirm your identity, do it only on Facebook\'s own pages.','Once you are back in, follow the checklist below.'],
+  bn:['Facebook-এর হ্যাক হওয়া অ্যাকাউন্টের অফিসিয়াল পেজ খোলো আর প্রশ্নগুলোর উত্তর দাও।','লগইন করতে না পারলে "Forgot password" দিয়ে তোমার নিজের ইমেইল বা ফোন নম্বর বেছে নাও।','আগে যে ফোন বা ব্রাউজার ব্যবহার করেছো সেটা দিয়ে চেষ্টা করো। Facebook চেনা ডিভাইসকে বেশি বিশ্বাস করে।','Facebook পরিচয় নিশ্চিত করতে বললে শুধু Facebook-এর নিজের পেজেই করো।','ফিরে এলে নিচের চেকলিস্ট ধরে এগোও।']},
+ {k:'instagram',n:'Instagram',s:'instagram',a:'#ff6ad5',L:[['Password reset','https://www.instagram.com/accounts/password/reset/'],['Help Center','https://help.instagram.com/']],
+  en:['Use "Forgot password" on the login screen or the official reset page.','Check your inbox and spam for official emails. Trust only links that open on instagram.com.','If Instagram offers "Get help", follow it. Any verification (like a video selfie) must happen inside Instagram only.','Once you are back in, follow the checklist below.'],
+  bn:['লগইন স্ক্রিনে "Forgot password" বা অফিসিয়াল রিসেট পেজ ব্যবহার করো।','ইনবক্স ও স্প্যাম দেখো। শুধু instagram.com-এ খোলা লিংকে বিশ্বাস করো।','Instagram "Get help" দিলে সেটা ধরে এগোও। ভিডিও সেলফির মতো যাচাই শুধু Instagram-এর ভেতরেই করো।','ফিরে এলে নিচের চেকলিস্ট ধরে এগোও।']},
+ {k:'telegram',n:'Telegram',s:'telegram',a:'#2de2ff',L:[['Telegram FAQ','https://telegram.org/faq'],['Telegram Support','https://telegram.org/support']],
+  en:['A Telegram account is tied to your phone number. Log in again with your number and the code Telegram sends.','Never share that login code with anyone, even someone who says they are Telegram.','If you forgot your two-step password, use the recovery email you set earlier. Otherwise contact Telegram Support.','Once you are in, end other active sessions in Settings and set a new two-step password.'],
+  bn:['Telegram অ্যাকাউন্ট ফোন নম্বরের সাথে বাঁধা। নিজের নম্বর আর Telegram-এর পাঠানো কোড দিয়ে আবার লগইন করো।','ওই লগইন কোড কাউকে দিও না, যে নিজেকে Telegram বলে তাকেও না।','টু-স্টেপ পাসওয়ার্ড ভুলে গেলে আগে দেওয়া রিকভারি ইমেইল ব্যবহার করো। না থাকলে Telegram Support-এর সাথে কথা বলো।','ঢুকে গেলে Settings থেকে অন্য সব সেশন বন্ধ করো আর নতুন টু-স্টেপ পাসওয়ার্ড দাও।']},
+ {k:'messenger',n:'Messenger',s:'messenger',a:'#4da3ff',L:[['Facebook hacked page','https://www.facebook.com/hacked'],['Messenger help','https://www.facebook.com/help/messenger-app/']],
+  en:['Messenger uses your Facebook account, so recover the Facebook account first.','After Facebook works, log in to Messenger again.','Remove unknown devices and turn on two-factor login.'],
+  bn:['Messenger তোমার Facebook অ্যাকাউন্ট ব্যবহার করে, তাই আগে Facebook ফিরে পাও।','Facebook ঠিক হলে Messenger-এ আবার লগইন করো।','অচেনা ডিভাইস সরাও আর টু-ফ্যাক্টর চালু করো।']},
+ {k:'whatsapp',n:'WhatsApp',s:'whatsapp',a:'#7cfc8a',L:[['WhatsApp Help Center','https://faq.whatsapp.com/']],
+  en:['Install WhatsApp and register with your own phone number.','Enter the 6-digit code sent by SMS or call. Never share it with anyone.','If it asks for a two-step PIN you forgot, use the reset option in the app.','If you are still blocked, contact WhatsApp support from inside the app.'],
+  bn:['WhatsApp ইনস্টল করে নিজের ফোন নম্বর দিয়ে রেজিস্টার করো।','SMS বা কলে আসা ৬ সংখ্যার কোড দাও। কাউকে দিও না।','টু-স্টেপ পিন ভুলে গেলে অ্যাপের রিসেট অপশন ব্যবহার করো।','তবু আটকে থাকলে অ্যাপের ভেতর থেকে WhatsApp সাপোর্টে জানাও।']},
+ {k:'google',n:'Google / Gmail',s:'google',a:'#fbbf24',L:[['Google account recovery','https://accounts.google.com/signin/recovery']],
+  en:['Open Google\'s recovery page and answer the questions with details you remember.','Use a device and place you have used before.','After access: change the password, check recovery email and phone, review devices and turn on 2-Step Verification.'],
+  bn:['Google-এর রিকভারি পেজ খুলে মনে থাকা তথ্য দিয়ে প্রশ্নের উত্তর দাও।','আগে যে ডিভাইস ও জায়গা থেকে ব্যবহার করেছো সেটা দিয়ে চেষ্টা করো।','ঢুকে গেলে: পাসওয়ার্ড বদলাও, রিকভারি ইমেইল-ফোন দেখো, ডিভাইস দেখো আর 2-Step Verification চালু করো।']},
+ {k:'tiktok',n:'TikTok',s:'tiktok',a:'#2de2ff',L:[['TikTok Support','https://support.tiktok.com/']],
+  en:['Try the password reset with the phone or email on the account.','If that fails, use TikTok\'s support page or the in-app "Report a problem".','Once in: change the password and check logged-in devices.'],
+  bn:['অ্যাকাউন্টের ফোন বা ইমেইল দিয়ে পাসওয়ার্ড রিসেট চেষ্টা করো।','না হলে TikTok-এর সাপোর্ট পেজ বা অ্যাপের "Report a problem" ব্যবহার করো।','ঢুকে গেলে পাসওয়ার্ড বদলাও আর লগইন করা ডিভাইস দেখো।']},
+ {k:'x',n:'X (Twitter)',s:'x',a:'#d6ff3a',L:[['X Help Center','https://help.x.com/']],
+  en:['Use "Forgot password" on the login page.','If that fails, use the contact forms in the Help Center.','Once in: change the password, revoke unknown apps and turn on two-factor login.'],
+  bn:['লগইন পেজে "Forgot password" ব্যবহার করো।','না হলে Help Center-এর কন্টাক্ট ফর্ম ব্যবহার করো।','ঢুকে গেলে পাসওয়ার্ড বদলাও, অচেনা অ্যাপ সরাও আর টু-ফ্যাক্টর চালু করো।']},
+ {k:'microsoft',n:'Microsoft',s:'microsoft',a:'#4da3ff',L:[['Microsoft account recovery','https://account.live.com/password/reset']],
+  en:['Open the official reset page and follow the questions.','Use details and devices you have used before.'],
+  bn:['অফিসিয়াল রিসেট পেজ খুলে প্রশ্নগুলো অনুসরণ করো।','আগে ব্যবহার করা তথ্য ও ডিভাইস দিয়ে চেষ্টা করো।']},
+ {k:'apple',n:'Apple ID',s:'apple',a:'#e879f9',L:[['Apple iForgot','https://iforgot.apple.com/']],
+  en:['Open Apple\'s official page and enter your Apple ID.','Follow the steps Apple shows for your account.'],
+  bn:['Apple-এর অফিসিয়াল পেজ খুলে তোমার Apple ID দাও।','Apple যে ধাপ দেখায় সেগুলো অনুসরণ করো।']}
+];
+var lang='en',cur=null;
+try{var sv=localStorage.getItem('rec_lang');if(sv==='bn')lang='bn'}catch(e){}
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function tx(){return T[lang]}
+function logo(p,parent){var d=el('div','lg');var im=el('img');im.alt='';im.loading='lazy';im.referrerPolicy='no-referrer';im.src='https://cdn.simpleicons.org/'+p.s;im.addEventListener('error',function(){im.remove();d.textContent=p.n.charAt(0)});d.appendChild(im);return d}
+function build(){
+ var t=tx();document.documentElement.lang=lang;
+ $('back').textContent=t.back;$('t_tag').textContent=t.tag;$('t_h1').innerHTML=t.h1;$('t_lead').textContent=t.lead;$('t_w1').textContent=t.w1;$('t_w2').textContent=t.w2;
+ $('t_pick').textContent=t.pick;$('t_pick2').textContent=t.pick2;$('t_ck').textContent=t.ck;$('t_ck2').textContent=t.ck2;$('t_wh').textContent=t.wh;$('t_can').textContent=t.can;$('t_cant').textContent=t.cant;$('t_ask').textContent=t.ask;$('t_ask2').textContent=t.ask2;$('foot').textContent=t.foot;$('send').textContent=t.send;$('msg').placeholder=t.ph;
+ document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===lang))});
+ var g=$('grid');g.textContent='';
+ PF.forEach(function(p,i){var b=el('button','card pf');b.type='button';b.style.setProperty('--a',p.a);b.style.setProperty('--i',i);b.setAttribute('aria-expanded',String(cur===p.k));b.appendChild(logo(p));b.appendChild(el('b','',p.n));b.addEventListener('click',function(){cur=cur===p.k?null:p.k;build();if(cur)$('panel').scrollIntoView({behavior:'smooth',block:'nearest'})});g.appendChild(b)});
+ var pn=$('panel');pn.textContent='';pn.hidden=!cur;
+ if(cur){var p=PF.filter(function(x){return x.k===cur})[0];pn.appendChild(el('h3','',p.n+' \u00b7 '+t.steps));var ol=el('ol');p[lang].forEach(function(s){ol.appendChild(el('li','',s))});pn.appendChild(ol);var lk=el('div','lk');p.L.forEach(function(l,i){var a=el('a','btn'+(i?'':' main'),l[0]+' \u2197');a.href=l[1];a.target='_blank';a.rel='noopener noreferrer';lk.appendChild(a)});pn.appendChild(lk);pn.style.borderColor=p.a}
+ var cl=$('cl');cl.textContent='';var st={};try{st=JSON.parse(localStorage.getItem('rec_ck')||'{}')}catch(e){}
+ t.ckl.forEach(function(s,i){var l=el('label'),c=el('input');c.type='checkbox';c.checked=!!st[i];c.addEventListener('change',function(){st[i]=c.checked;try{localStorage.setItem('rec_ck',JSON.stringify(st))}catch(e){}});l.appendChild(c);l.appendChild(el('span','',s));cl.appendChild(l)});
+ var uc=$('ul_can'),un=$('ul_cant');uc.textContent='';un.textContent='';t.cans.forEach(function(s){uc.appendChild(el('li','',s))});t.cants.forEach(function(s){un.appendChild(el('li','',s))});
+ var sel=$('plat'),v=sel.value;sel.textContent='';PF.forEach(function(p){var o=el('option','',p.n);o.value=p.n;sel.appendChild(o)});var o=el('option','',t.other);o.value=t.other;sel.appendChild(o);if(v)sel.value=v}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.l;try{localStorage.setItem('rec_lang',lang)}catch(e){}build()})});
+$('send').addEventListener('click',function(){var t=tx(),m=$('msg').value.replace(/\s+/g,' ').trim(),e=$('err');e.textContent='';
+ if(m.length<8){e.textContent=t.short;return}
+ if(/[0-9\u09e6-\u09ef]{5,}/.test(m.replace(/[\s-]/g,''))){e.textContent=t.bad;return}
+ var text=t.hello.replace('{p}',$('plat').value)+' '+m;window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener')});
+build();
+})();
+</script>
+</body>
+</html>
